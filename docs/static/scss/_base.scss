@@ -9,6 +9,7 @@ body {
   font-family: $base-font;
   font-size: 100%;
   color: $color-text;
+  text-rendering: optimizeLegibility;
 }
 
 main {

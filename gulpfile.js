@@ -31,14 +31,14 @@ gulp.task('dev-sass', function(cb) {
     }
 
     pump([
-        gulp.src(['./htdocs/static/scss/*.scss', '!**/_*.scss']),
+        gulp.src(['./docs/static/scss/*.scss', '!**/_*.scss']),
         sourcemaps.init(),
         sass({
             includePaths: ['node_modules/normalize-scss/sass']
         }),
         postcss(processors),
         sourcemaps.write('.'),
-        gulp.dest('./htdocs/static/css'),
+        gulp.dest('./docs/static/css'),
         browserSync.stream({match: '**/*.css'})
     ], cb);
 });
@@ -46,7 +46,7 @@ gulp.task('dev-sass', function(cb) {
 gulp.task('default', gulp.series('dev-sass'));
 
 function watchFiles() {
-    gulp.watch('./htdocs/static/scss/**/*', gulp.series('dev-sass'));
+    gulp.watch('./docs/static/scss/**/*', gulp.series('dev-sass'));
 }
 
 gulp.task('serve', gulp.parallel(watchFiles));

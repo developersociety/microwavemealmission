@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Microwave Meal Mission - Volunteer to cook</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <meta name="generator" content="The Developer Society dev.ngo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <h1>Microwave Meal Mission</h1>
+  </header>
+  <main>
+    <h2>Do you or your collegues need help with food? We're coming! <strong>Please fill in the form below</strong></h2>
+
+    <img src="static/img/doctor.svg" alt="NHS staff" />
+
+    <form id="my-form">
+      <label for="form-name">Name</label>
+      <input type="text" id="form-name" name="full-name" placeholder="What's your name?" required />
+      <label for="form-email">Email Address</label>
+      <input type="email" id="form-email" name="email-address" placeholder="What's your email address?" required />
+      <label for="form-content">Any details we need to know?</label>
+      <textarea type="text" id="form-content" name="content" rows="5" placeholder="Dietary requirements? Locations? Numbers of staff?" style="resize: vertical"></textarea>
+      <button id="Form-submit" type="submit">Let us know</button>
+    </form>
+
+  </main>
+  <footer>
+    <p>
+      <small>&copy; Content on this site is licensed under a Creative Commons 0 license. Created by <a href="https://dev.ngo">The Developer Society</a></small></p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    // POST form data to zapier on submit
+    $("#my-form").submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: "https://hooks.zapier.com/hooks/catch/576272/o1conbe/",
+        type: "post",
+        data: $("#my-form").serialize() + "&type=need",
+        success: function() {
+          // Redirect to another success page
+          window.location = "thanks.html";
+        },
+        error: function() {
+          window.location = "fail.html";
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>

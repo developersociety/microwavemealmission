@@ -1,0 +1,133 @@
+@import 'normalize/import-now';
+@import 'variables';
+@import 'base';
+@import 'typography';
+@import 'accessibility';
+@import 'form';
+@import 'utilities';
+
+header {
+  margin: 0;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.5rem;
+  @media all and (min-width: 540px) {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  max-width: 512px;
+  margin-left: auto;
+  margin-right: auto;
+  @media all and (min-width: 540px) {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  @media all and (min-width: 820px) {
+    max-width: none;
+  }
+}
+
+h3 {
+  font-style: italic;
+}
+
+main {
+  max-width: 50rem;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+svg#header-image {
+  transform: scale(1.4);
+  margin-bottom: 1rem;
+  #labels {
+    display: none;
+  }
+  @media all and (min-width: 540px) {
+    transform: scale(1);
+    #labels {
+      display: block;
+    }
+  }
+  text {
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 64%;
+  }
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2rem;
+
+    @media all and (min-width: 540px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+section a, a.button {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: #FE4343;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.25rem 0 0.35rem 0;
+  &:hover {
+    background: #cc0000;
+  }
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+strong {
+  color: #FE4343;
+}
+
+form {
+  max-width: 30rem;
+  margin: 0 auto;
+  display: block;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0 0.35rem 0;
+}
+
+input[type="text"], input[type="email"] {
+  width: 280px;
+}
+
+footer {
+  padding: 1rem;
+  font-size: 80%;
+  text-align: center;
+}
