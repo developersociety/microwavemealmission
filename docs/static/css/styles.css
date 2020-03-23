@@ -421,6 +421,8 @@ h6, .h6 {
   font-weight: normal; }
 a {
   color: inherit; }
+p {
+  margin-bottom: 1rem; }
 hr {
   border: none;
   height: 0.1875rem;

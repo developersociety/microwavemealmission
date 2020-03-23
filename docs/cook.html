@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Microwave Meal Mission - Volunteer to cook</title>
+  <title>Volunteer to cook - Microwave Meal Mission</title>
   <link rel="stylesheet" href="/static/css/styles.css">
   <meta name="generator" content="The Developer Society dev.ngo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,9 +14,9 @@
     <h1>Microwave Meal Mission</h1>
   </header>
   <main>
-    <h2>Do you or your collegues need help with food? We're coming! <strong>Please fill in the form below</strong></h2>
+    <h2>Can volunteer to cook meals and freeze them for NHS staff? Great! <strong>Please fill in the form below</strong></h2>
 
-    <img src="static/img/doctor.svg" alt="NHS staff" />
+    <img src="static/img/cook.svg" alt="Cook" />
 
     <form id="my-form">
       <label for="form-name">Name</label>
@@ -24,8 +24,8 @@
       <label for="form-email">Email Address</label>
       <input type="email" id="form-email" name="email-address" placeholder="What's your email address?" required />
       <label for="form-content">Any details we need to know?</label>
-      <textarea type="text" id="form-content" name="content" rows="5" placeholder="Dietary requirements? Locations? Numbers of staff?" style="resize: vertical"></textarea>
-      <button id="Form-submit" type="submit">Let us know</button>
+      <textarea type="text" id="form-content" name="content" rows="5" placeholder="What would you like us to know?" style="resize: vertical"></textarea>
+      <button id="Form-submit" type="submit">Volunteer now</button>
     </form>
 
   </main>
@@ -42,7 +42,7 @@
       $.ajax({
         url: "https://hooks.zapier.com/hooks/catch/576272/o1conbe/",
         type: "post",
-        data: $("#my-form").serialize() + "&type=need",
+        data: $("#my-form").serialize() + "&type=cook",
         success: function() {
           // Redirect to another success page
           window.location = "thanks.html";
